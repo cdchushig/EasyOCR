@@ -399,7 +399,7 @@ class Reader(object):
                                 paragraph, contrast_ths, adjust_contrast,\
                                 filter_ths, y_ths, x_ths, False, output_format)
 
-        return result
+        return result, img, img_cv_grey
     
     def readtextlang(self, image, decoder = 'greedy', beamWidth= 5, batch_size = 1,\
                  workers = 0, allowlist = None, blocklist = None, detail = 1,\

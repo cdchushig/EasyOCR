@@ -243,7 +243,7 @@ def main():
                             recognizer=args.recognizer,\
                             verbose=args.verbose,\
                             quantize=args.quantize)
-    for line in reader.readtext(args.file,\
+    for line, img, img_cv_grey in reader.readtext(args.file,\
                                 decoder=args.decoder,\
                                 beamWidth=args.beamWidth,\
                                 batch_size=args.batch_size,\
@@ -269,6 +269,7 @@ def main():
                                 x_ths=args.x_ths,\
                                 add_margin=args.add_margin):
         print(line)
+        return line, img, img_cv_grey
 
 
 if __name__ == "__main__":
